@@ -1,0 +1,13 @@
+type Department @model {
+  id: ID!
+  name: String!
+  manager: Employee @connection
+  employees: [Employee] @connection(name: "DepartmentEmployees")
+}
+
+type Employee @model {
+  id: ID!
+  name: String!
+  age: Int
+  department: Department @connection(name: "DepartmentEmployees")
+}

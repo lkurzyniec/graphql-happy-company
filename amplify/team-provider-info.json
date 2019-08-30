@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "graphqlhappycompany-dev-20190830103402-authRole",
+            "UnauthRoleArn": "arn:aws:iam::170669386838:role/graphqlhappycompany-dev-20190830103402-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::170669386838:role/graphqlhappycompany-dev-20190830103402-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "graphqlhappycompany-dev-20190830103402-deployment",
+            "UnauthRoleName": "graphqlhappycompany-dev-20190830103402-unauthRole",
+            "StackName": "graphqlhappycompany-dev-20190830103402",
+            "StackId": "arn:aws:cloudformation:eu-west-1:170669386838:stack/graphqlhappycompany-dev-20190830103402/ec1c58b0-cb00-11e9-896e-0615f1e712e0"
+        },
+        "categories": {
+            "auth": {
+                "graphqlhappycompanyc52b9e9b": {}
+            }
+        }
+    }
+}
