@@ -1,0 +1,8 @@
+<h1>Departments</h1>
+<div>
+  <div *ngFor="let department of departments">
+    <p>Name: {{department.name}}</p>
+    <p *ngIf="department.manager">Manager: {{department.manager.name}}</p>
+    <hr />
+  </div>
+</div>
