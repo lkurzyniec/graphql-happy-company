@@ -37,6 +37,9 @@ query ListDepartments(
         age
       }
       employees {
+        items {
+          fullName
+        }
         nextToken
       }
     }

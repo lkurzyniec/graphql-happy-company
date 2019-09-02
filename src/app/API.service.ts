@@ -25,7 +25,7 @@ export type CreateEmployeeInput = {
   id?: string | null;
   fullName: string;
   age?: number | null;
-  employeeDepartmentId?: string | null;
+  employeeDepartmentId: string;
 };
 
 export type UpdateEmployeeInput = {
@@ -107,7 +107,7 @@ export type CreateDepartmentMutation = {
       __typename: "Department";
       id: string;
       name: string;
-    } | null;
+    };
   } | null;
   employees: {
     __typename: "ModelEmployeeConnection";
@@ -134,7 +134,7 @@ export type UpdateDepartmentMutation = {
       __typename: "Department";
       id: string;
       name: string;
-    } | null;
+    };
   } | null;
   employees: {
     __typename: "ModelEmployeeConnection";
@@ -161,7 +161,7 @@ export type DeleteDepartmentMutation = {
       __typename: "Department";
       id: string;
       name: string;
-    } | null;
+    };
   } | null;
   employees: {
     __typename: "ModelEmployeeConnection";
@@ -194,7 +194,7 @@ export type CreateEmployeeMutation = {
       __typename: "ModelEmployeeConnection";
       nextToken: string | null;
     } | null;
-  } | null;
+  };
 };
 
 export type UpdateEmployeeMutation = {
@@ -216,7 +216,7 @@ export type UpdateEmployeeMutation = {
       __typename: "ModelEmployeeConnection";
       nextToken: string | null;
     } | null;
-  } | null;
+  };
 };
 
 export type DeleteEmployeeMutation = {
@@ -238,7 +238,7 @@ export type DeleteEmployeeMutation = {
       __typename: "ModelEmployeeConnection";
       nextToken: string | null;
     } | null;
-  } | null;
+  };
 };
 
 export type GetDepartmentQuery = {
@@ -254,7 +254,7 @@ export type GetDepartmentQuery = {
       __typename: "Department";
       id: string;
       name: string;
-    } | null;
+    };
   } | null;
   employees: {
     __typename: "ModelEmployeeConnection";
@@ -307,7 +307,7 @@ export type GetEmployeeQuery = {
       __typename: "ModelEmployeeConnection";
       nextToken: string | null;
     } | null;
-  } | null;
+  };
 };
 
 export type ListEmployeesQuery = {
@@ -321,7 +321,7 @@ export type ListEmployeesQuery = {
       __typename: "Department";
       id: string;
       name: string;
-    } | null;
+    };
   } | null> | null;
   nextToken: string | null;
 };
@@ -339,7 +339,7 @@ export type OnCreateDepartmentSubscription = {
       __typename: "Department";
       id: string;
       name: string;
-    } | null;
+    };
   } | null;
   employees: {
     __typename: "ModelEmployeeConnection";
@@ -366,7 +366,7 @@ export type OnUpdateDepartmentSubscription = {
       __typename: "Department";
       id: string;
       name: string;
-    } | null;
+    };
   } | null;
   employees: {
     __typename: "ModelEmployeeConnection";
@@ -393,7 +393,7 @@ export type OnDeleteDepartmentSubscription = {
       __typename: "Department";
       id: string;
       name: string;
-    } | null;
+    };
   } | null;
   employees: {
     __typename: "ModelEmployeeConnection";
@@ -426,7 +426,7 @@ export type OnCreateEmployeeSubscription = {
       __typename: "ModelEmployeeConnection";
       nextToken: string | null;
     } | null;
-  } | null;
+  };
 };
 
 export type OnUpdateEmployeeSubscription = {
@@ -448,7 +448,7 @@ export type OnUpdateEmployeeSubscription = {
       __typename: "ModelEmployeeConnection";
       nextToken: string | null;
     } | null;
-  } | null;
+  };
 };
 
 export type OnDeleteEmployeeSubscription = {
@@ -470,7 +470,7 @@ export type OnDeleteEmployeeSubscription = {
       __typename: "ModelEmployeeConnection";
       nextToken: string | null;
     } | null;
-  } | null;
+  };
 };
 
 @Injectable({
@@ -753,6 +753,9 @@ export class APIService {
             }
             employees {
               __typename
+              items {
+                fullName
+              }
               nextToken
             }
           }

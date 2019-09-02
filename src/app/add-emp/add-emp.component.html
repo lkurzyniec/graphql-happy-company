@@ -1,0 +1,23 @@
+<h1>Add employee</h1>
+<form [formGroup]="form">
+  Full name: <input type="text" formControlName="fullName" #fullName /><span *ngIf="form.controls['fullName'].invalid">*</span>
+  <br />
+  Department:
+  <select (change)="departmentChanged($event)" formControlName="departmentId">
+    <option value="" disabled>Choose department</option>
+    <option *ngFor="let department of departments" [value]="department.id">
+      {{department.name}}
+    </option>
+  </select>
+  <br />
+  <button type="submit" [disabled]="form.invalid"
+    (click)="addEmployee()">
+    Create
+  </button>
+  <p *ngIf="newEmpId">
+    {{newEmpId}}
+  </p>
+  <p>
+    <a href="/emp">Employees</a>
+  </p>
+</form>

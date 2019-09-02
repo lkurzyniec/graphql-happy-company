@@ -9,5 +9,5 @@ type Employee @model {
   id: ID!
   fullName: String!
   age: Int
-  department: Department @connection(name: "DepartmentEmployees")
+  department: Department! @connection(name: "DepartmentEmployees")
 }

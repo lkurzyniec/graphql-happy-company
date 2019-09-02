@@ -13,13 +13,17 @@ import Storage from '@aws-amplify/storage';
 import { AuthComponent } from './auth/auth.component';
 import { DeptComponent } from './dept/dept.component';
 import { AddDeptComponent } from './add-dept/add-dept.component';
+import { AddEmpComponent } from './add-emp/add-emp.component';
+import { EmpComponent } from './emp/emp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     DeptComponent,
-    AddDeptComponent
+    AddDeptComponent,
+    AddEmpComponent,
+    EmpComponent
   ],
   imports: [
     BrowserModule,

@@ -40,5 +40,4 @@ export class AddDeptComponent implements OnInit {
     this.newDeptId = result.id;
     this.form.reset();
   }
-
 }
