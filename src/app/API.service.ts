@@ -23,14 +23,14 @@ export type DeleteDepartmentInput = {
 
 export type CreateEmployeeInput = {
   id?: string | null;
-  name: string;
+  fullName: string;
   age?: number | null;
   employeeDepartmentId?: string | null;
 };
 
 export type UpdateEmployeeInput = {
   id: string;
-  name?: string | null;
+  fullName?: string | null;
   age?: number | null;
   employeeDepartmentId?: string | null;
 };
@@ -75,7 +75,7 @@ export type ModelStringFilterInput = {
 
 export type ModelEmployeeFilterInput = {
   id?: ModelIDFilterInput | null;
-  name?: ModelStringFilterInput | null;
+  fullName?: ModelStringFilterInput | null;
   age?: ModelIntFilterInput | null;
   and?: Array<ModelEmployeeFilterInput | null> | null;
   or?: Array<ModelEmployeeFilterInput | null> | null;
@@ -101,7 +101,7 @@ export type CreateDepartmentMutation = {
   manager: {
     __typename: "Employee";
     id: string;
-    name: string;
+    fullName: string;
     age: number | null;
     department: {
       __typename: "Department";
@@ -114,7 +114,7 @@ export type CreateDepartmentMutation = {
     items: Array<{
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null> | null;
     nextToken: string | null;
@@ -128,7 +128,7 @@ export type UpdateDepartmentMutation = {
   manager: {
     __typename: "Employee";
     id: string;
-    name: string;
+    fullName: string;
     age: number | null;
     department: {
       __typename: "Department";
@@ -141,7 +141,7 @@ export type UpdateDepartmentMutation = {
     items: Array<{
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null> | null;
     nextToken: string | null;
@@ -155,7 +155,7 @@ export type DeleteDepartmentMutation = {
   manager: {
     __typename: "Employee";
     id: string;
-    name: string;
+    fullName: string;
     age: number | null;
     department: {
       __typename: "Department";
@@ -168,7 +168,7 @@ export type DeleteDepartmentMutation = {
     items: Array<{
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null> | null;
     nextToken: string | null;
@@ -178,7 +178,7 @@ export type DeleteDepartmentMutation = {
 export type CreateEmployeeMutation = {
   __typename: "Employee";
   id: string;
-  name: string;
+  fullName: string;
   age: number | null;
   department: {
     __typename: "Department";
@@ -187,7 +187,7 @@ export type CreateEmployeeMutation = {
     manager: {
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null;
     employees: {
@@ -200,7 +200,7 @@ export type CreateEmployeeMutation = {
 export type UpdateEmployeeMutation = {
   __typename: "Employee";
   id: string;
-  name: string;
+  fullName: string;
   age: number | null;
   department: {
     __typename: "Department";
@@ -209,7 +209,7 @@ export type UpdateEmployeeMutation = {
     manager: {
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null;
     employees: {
@@ -222,7 +222,7 @@ export type UpdateEmployeeMutation = {
 export type DeleteEmployeeMutation = {
   __typename: "Employee";
   id: string;
-  name: string;
+  fullName: string;
   age: number | null;
   department: {
     __typename: "Department";
@@ -231,7 +231,7 @@ export type DeleteEmployeeMutation = {
     manager: {
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null;
     employees: {
@@ -248,7 +248,7 @@ export type GetDepartmentQuery = {
   manager: {
     __typename: "Employee";
     id: string;
-    name: string;
+    fullName: string;
     age: number | null;
     department: {
       __typename: "Department";
@@ -261,7 +261,7 @@ export type GetDepartmentQuery = {
     items: Array<{
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null> | null;
     nextToken: string | null;
@@ -277,7 +277,7 @@ export type ListDepartmentsQuery = {
     manager: {
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null;
     employees: {
@@ -291,7 +291,7 @@ export type ListDepartmentsQuery = {
 export type GetEmployeeQuery = {
   __typename: "Employee";
   id: string;
-  name: string;
+  fullName: string;
   age: number | null;
   department: {
     __typename: "Department";
@@ -300,7 +300,7 @@ export type GetEmployeeQuery = {
     manager: {
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null;
     employees: {
@@ -315,7 +315,7 @@ export type ListEmployeesQuery = {
   items: Array<{
     __typename: "Employee";
     id: string;
-    name: string;
+    fullName: string;
     age: number | null;
     department: {
       __typename: "Department";
@@ -333,7 +333,7 @@ export type OnCreateDepartmentSubscription = {
   manager: {
     __typename: "Employee";
     id: string;
-    name: string;
+    fullName: string;
     age: number | null;
     department: {
       __typename: "Department";
@@ -346,7 +346,7 @@ export type OnCreateDepartmentSubscription = {
     items: Array<{
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null> | null;
     nextToken: string | null;
@@ -360,7 +360,7 @@ export type OnUpdateDepartmentSubscription = {
   manager: {
     __typename: "Employee";
     id: string;
-    name: string;
+    fullName: string;
     age: number | null;
     department: {
       __typename: "Department";
@@ -373,7 +373,7 @@ export type OnUpdateDepartmentSubscription = {
     items: Array<{
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null> | null;
     nextToken: string | null;
@@ -387,7 +387,7 @@ export type OnDeleteDepartmentSubscription = {
   manager: {
     __typename: "Employee";
     id: string;
-    name: string;
+    fullName: string;
     age: number | null;
     department: {
       __typename: "Department";
@@ -400,7 +400,7 @@ export type OnDeleteDepartmentSubscription = {
     items: Array<{
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null> | null;
     nextToken: string | null;
@@ -410,7 +410,7 @@ export type OnDeleteDepartmentSubscription = {
 export type OnCreateEmployeeSubscription = {
   __typename: "Employee";
   id: string;
-  name: string;
+  fullName: string;
   age: number | null;
   department: {
     __typename: "Department";
@@ -419,7 +419,7 @@ export type OnCreateEmployeeSubscription = {
     manager: {
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null;
     employees: {
@@ -432,7 +432,7 @@ export type OnCreateEmployeeSubscription = {
 export type OnUpdateEmployeeSubscription = {
   __typename: "Employee";
   id: string;
-  name: string;
+  fullName: string;
   age: number | null;
   department: {
     __typename: "Department";
@@ -441,7 +441,7 @@ export type OnUpdateEmployeeSubscription = {
     manager: {
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null;
     employees: {
@@ -454,7 +454,7 @@ export type OnUpdateEmployeeSubscription = {
 export type OnDeleteEmployeeSubscription = {
   __typename: "Employee";
   id: string;
-  name: string;
+  fullName: string;
   age: number | null;
   department: {
     __typename: "Department";
@@ -463,7 +463,7 @@ export type OnDeleteEmployeeSubscription = {
     manager: {
       __typename: "Employee";
       id: string;
-      name: string;
+      fullName: string;
       age: number | null;
     } | null;
     employees: {
@@ -488,7 +488,7 @@ export class APIService {
           manager {
             __typename
             id
-            name
+            fullName
             age
             department {
               __typename
@@ -501,7 +501,7 @@ export class APIService {
             items {
               __typename
               id
-              name
+              fullName
               age
             }
             nextToken
@@ -527,7 +527,7 @@ export class APIService {
           manager {
             __typename
             id
-            name
+            fullName
             age
             department {
               __typename
@@ -540,7 +540,7 @@ export class APIService {
             items {
               __typename
               id
-              name
+              fullName
               age
             }
             nextToken
@@ -566,7 +566,7 @@ export class APIService {
           manager {
             __typename
             id
-            name
+            fullName
             age
             department {
               __typename
@@ -579,7 +579,7 @@ export class APIService {
             items {
               __typename
               id
-              name
+              fullName
               age
             }
             nextToken
@@ -601,7 +601,7 @@ export class APIService {
         createEmployee(input: $input) {
           __typename
           id
-          name
+          fullName
           age
           department {
             __typename
@@ -610,7 +610,7 @@ export class APIService {
             manager {
               __typename
               id
-              name
+              fullName
               age
             }
             employees {
@@ -635,7 +635,7 @@ export class APIService {
         updateEmployee(input: $input) {
           __typename
           id
-          name
+          fullName
           age
           department {
             __typename
@@ -644,7 +644,7 @@ export class APIService {
             manager {
               __typename
               id
-              name
+              fullName
               age
             }
             employees {
@@ -669,7 +669,7 @@ export class APIService {
         deleteEmployee(input: $input) {
           __typename
           id
-          name
+          fullName
           age
           department {
             __typename
@@ -678,7 +678,7 @@ export class APIService {
             manager {
               __typename
               id
-              name
+              fullName
               age
             }
             employees {
@@ -705,7 +705,7 @@ export class APIService {
           manager {
             __typename
             id
-            name
+            fullName
             age
             department {
               __typename
@@ -718,7 +718,7 @@ export class APIService {
             items {
               __typename
               id
-              name
+              fullName
               age
             }
             nextToken
@@ -748,7 +748,7 @@ export class APIService {
             manager {
               __typename
               id
-              name
+              fullName
               age
             }
             employees {
@@ -779,7 +779,7 @@ export class APIService {
         getEmployee(id: $id) {
           __typename
           id
-          name
+          fullName
           age
           department {
             __typename
@@ -788,7 +788,7 @@ export class APIService {
             manager {
               __typename
               id
-              name
+              fullName
               age
             }
             employees {
@@ -817,7 +817,7 @@ export class APIService {
           items {
             __typename
             id
-            name
+            fullName
             age
             department {
               __typename
@@ -855,7 +855,7 @@ export class APIService {
           manager {
             __typename
             id
-            name
+            fullName
             age
             department {
               __typename
@@ -868,7 +868,7 @@ export class APIService {
             items {
               __typename
               id
-              name
+              fullName
               age
             }
             nextToken
@@ -890,7 +890,7 @@ export class APIService {
           manager {
             __typename
             id
-            name
+            fullName
             age
             department {
               __typename
@@ -903,7 +903,7 @@ export class APIService {
             items {
               __typename
               id
-              name
+              fullName
               age
             }
             nextToken
@@ -925,7 +925,7 @@ export class APIService {
           manager {
             __typename
             id
-            name
+            fullName
             age
             department {
               __typename
@@ -938,7 +938,7 @@ export class APIService {
             items {
               __typename
               id
-              name
+              fullName
               age
             }
             nextToken
@@ -956,7 +956,7 @@ export class APIService {
         onCreateEmployee {
           __typename
           id
-          name
+          fullName
           age
           department {
             __typename
@@ -965,7 +965,7 @@ export class APIService {
             manager {
               __typename
               id
-              name
+              fullName
               age
             }
             employees {
@@ -986,7 +986,7 @@ export class APIService {
         onUpdateEmployee {
           __typename
           id
-          name
+          fullName
           age
           department {
             __typename
@@ -995,7 +995,7 @@ export class APIService {
             manager {
               __typename
               id
-              name
+              fullName
               age
             }
             employees {
@@ -1016,7 +1016,7 @@ export class APIService {
         onDeleteEmployee {
           __typename
           id
-          name
+          fullName
           age
           department {
             __typename
@@ -1025,7 +1025,7 @@ export class APIService {
             manager {
               __typename
               id
-              name
+              fullName
               age
             }
             employees {

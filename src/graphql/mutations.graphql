@@ -5,7 +5,7 @@ mutation CreateDepartment($input: CreateDepartmentInput!) {
     name
     manager {
       id
-      name
+      fullName
       age
       department {
         id
@@ -15,7 +15,7 @@ mutation CreateDepartment($input: CreateDepartmentInput!) {
     employees {
       items {
         id
-        name
+        fullName
         age
       }
       nextToken
@@ -28,7 +28,7 @@ mutation UpdateDepartment($input: UpdateDepartmentInput!) {
     name
     manager {
       id
-      name
+      fullName
       age
       department {
         id
@@ -38,7 +38,7 @@ mutation UpdateDepartment($input: UpdateDepartmentInput!) {
     employees {
       items {
         id
-        name
+        fullName
         age
       }
       nextToken
@@ -51,7 +51,7 @@ mutation DeleteDepartment($input: DeleteDepartmentInput!) {
     name
     manager {
       id
-      name
+      fullName
       age
       department {
         id
@@ -61,7 +61,7 @@ mutation DeleteDepartment($input: DeleteDepartmentInput!) {
     employees {
       items {
         id
-        name
+        fullName
         age
       }
       nextToken
@@ -71,14 +71,14 @@ mutation DeleteDepartment($input: DeleteDepartmentInput!) {
 mutation CreateEmployee($input: CreateEmployeeInput!) {
   createEmployee(input: $input) {
     id
-    name
+    fullName
     age
     department {
       id
       name
       manager {
         id
-        name
+        fullName
         age
       }
       employees {
@@ -90,14 +90,14 @@ mutation CreateEmployee($input: CreateEmployeeInput!) {
 mutation UpdateEmployee($input: UpdateEmployeeInput!) {
   updateEmployee(input: $input) {
     id
-    name
+    fullName
     age
     department {
       id
       name
       manager {
         id
-        name
+        fullName
         age
       }
       employees {
@@ -109,14 +109,14 @@ mutation UpdateEmployee($input: UpdateEmployeeInput!) {
 mutation DeleteEmployee($input: DeleteEmployeeInput!) {
   deleteEmployee(input: $input) {
     id
-    name
+    fullName
     age
     department {
       id
       name
       manager {
         id
-        name
+        fullName
         age
       }
       employees {

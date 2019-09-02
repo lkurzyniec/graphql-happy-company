@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AmplifyAngularModule, AmplifyService, AmplifyModules } from 'aws-amplify-angular';
 import Auth from '@aws-amplify/auth';
@@ -11,17 +12,20 @@ import Storage from '@aws-amplify/storage';
 
 import { AuthComponent } from './auth/auth.component';
 import { DeptComponent } from './dept/dept.component';
+import { AddDeptComponent } from './add-dept/add-dept.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    DeptComponent
+    DeptComponent,
+    AddDeptComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AmplifyAngularModule,
+    ReactiveFormsModule,
   ],
   providers: [{
     provide: AmplifyService,

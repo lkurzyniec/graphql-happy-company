@@ -5,7 +5,7 @@ query GetDepartment($id: ID!) {
     name
     manager {
       id
-      name
+      fullName
       age
       department {
         id
@@ -15,7 +15,7 @@ query GetDepartment($id: ID!) {
     employees {
       items {
         id
-        name
+        fullName
         age
       }
       nextToken
@@ -33,7 +33,7 @@ query ListDepartments(
       name
       manager {
         id
-        name
+        fullName
         age
       }
       employees {
@@ -46,14 +46,14 @@ query ListDepartments(
 query GetEmployee($id: ID!) {
   getEmployee(id: $id) {
     id
-    name
+    fullName
     age
     department {
       id
       name
       manager {
         id
-        name
+        fullName
         age
       }
       employees {
@@ -70,7 +70,7 @@ query ListEmployees(
   listEmployees(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      name
+      fullName
       age
       department {
         id

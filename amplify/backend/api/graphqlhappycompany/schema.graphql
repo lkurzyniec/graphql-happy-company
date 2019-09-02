@@ -7,7 +7,7 @@ type Department @model {
 
 type Employee @model {
   id: ID!
-  name: String!
+  fullName: String!
   age: Int
   department: Department @connection(name: "DepartmentEmployees")
 }

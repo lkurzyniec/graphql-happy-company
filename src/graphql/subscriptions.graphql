@@ -5,7 +5,7 @@ subscription OnCreateDepartment {
     name
     manager {
       id
-      name
+      fullName
       age
       department {
         id
@@ -15,7 +15,7 @@ subscription OnCreateDepartment {
     employees {
       items {
         id
-        name
+        fullName
         age
       }
       nextToken
@@ -28,7 +28,7 @@ subscription OnUpdateDepartment {
     name
     manager {
       id
-      name
+      fullName
       age
       department {
         id
@@ -38,7 +38,7 @@ subscription OnUpdateDepartment {
     employees {
       items {
         id
-        name
+        fullName
         age
       }
       nextToken
@@ -51,7 +51,7 @@ subscription OnDeleteDepartment {
     name
     manager {
       id
-      name
+      fullName
       age
       department {
         id
@@ -61,7 +61,7 @@ subscription OnDeleteDepartment {
     employees {
       items {
         id
-        name
+        fullName
         age
       }
       nextToken
@@ -71,14 +71,14 @@ subscription OnDeleteDepartment {
 subscription OnCreateEmployee {
   onCreateEmployee {
     id
-    name
+    fullName
     age
     department {
       id
       name
       manager {
         id
-        name
+        fullName
         age
       }
       employees {
@@ -90,14 +90,14 @@ subscription OnCreateEmployee {
 subscription OnUpdateEmployee {
   onUpdateEmployee {
     id
-    name
+    fullName
     age
     department {
       id
       name
       manager {
         id
-        name
+        fullName
         age
       }
       employees {
@@ -109,14 +109,14 @@ subscription OnUpdateEmployee {
 subscription OnDeleteEmployee {
   onDeleteEmployee {
     id
-    name
+    fullName
     age
     department {
       id
       name
       manager {
         id
-        name
+        fullName
         age
       }
       employees {

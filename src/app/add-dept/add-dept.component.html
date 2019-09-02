@@ -1,0 +1,23 @@
+<h1>Add department</h1>
+<form [formGroup]="form">
+  Name: <input type="text" formControlName="name" #name /><span *ngIf="form.controls['name'].invalid">*</span>
+  <br />
+  Manager:
+  <select (change)="managerChanged($event)" formControlName="managerId">
+    <option value="" disabled>Choose manager</option>
+    <option *ngFor="let employee of employees" [value]="employee.id">
+      {{employee.fullName}}
+    </option>
+  </select>
+  <br />
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid"
+    (click)="addDepartment()">
+    Create
+  </button>
+  <p *ngIf="newDeptId">
+    {{newDeptId}}
+  </p>
+  <p>
+    <a href="/dept">Departments</a>
+  </p>
+</form>

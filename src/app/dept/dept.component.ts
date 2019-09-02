@@ -13,8 +13,18 @@ export class DeptComponent implements OnInit {
   constructor(private api: APIService) { }
 
   async ngOnInit() {
+    this.getData();
+  }
+
+  async getData(){
     const result = await this.api.ListDepartments();
     this.departments = orderBy(result.items, ['name'], ['asc']);
   }
 
+  async remove(id){
+    await this.api.DeleteDepartment({
+      id
+    });
+    await this.getData();
+  }
 }
