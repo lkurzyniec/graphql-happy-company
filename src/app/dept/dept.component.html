@@ -1,4 +1,8 @@
 <h1>Departments</h1>
+<p>
+  <a href="/dept/add">Add department</a>
+</p>
+<hr />
 <div>
   <div *ngFor="let department of departments">
     <p>Name: {{department.name}} <button title="Remove" (click) = "remove(department.id)">&times;</button></p>
@@ -9,6 +13,3 @@
     <hr />
   </div>
 </div>
-<p>
-  <a href="/dept/add">Add department</a>
-</p>

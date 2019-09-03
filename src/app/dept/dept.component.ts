@@ -14,6 +14,13 @@ export class DeptComponent implements OnInit {
 
   async ngOnInit() {
     this.getData();
+
+    this.api.OnCreateDepartmentListener.subscribe(
+      added => this.departments.push(added.value.data.onCreateDepartment)
+    );
+    this.api.OnDeleteDepartmentListener.subscribe(
+      deleted => this.departments = this.departments.filter(item => item.id !== deleted.value.data.onDeleteDepartment.id)
+    );
   }
 
   async getData(){
@@ -25,6 +32,5 @@ export class DeptComponent implements OnInit {
     await this.api.DeleteDepartment({
       id
     });
-    await this.getData();
   }
 }

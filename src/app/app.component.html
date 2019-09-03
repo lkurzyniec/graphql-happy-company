@@ -1,5 +1,7 @@
 <a href="/" *ngIf="!isRoot">Home</a>
+
 <router-outlet></router-outlet>
+
 <div *ngIf="isLogged">
   <a href="/dept">Departments</a>
   <br />

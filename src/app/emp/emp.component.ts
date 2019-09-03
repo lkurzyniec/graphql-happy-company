@@ -14,6 +14,13 @@ export class EmpComponent implements OnInit {
 
   async ngOnInit() {
     this.getData();
+
+    this.api.OnCreateEmployeeListener.subscribe(
+      added => this.employees.push(added.value.data.onCreateEmployee)
+    );
+    this.api.OnDeleteEmployeeListener.subscribe(
+      deleted => this.employees = this.employees.filter(item => item.id !== deleted.value.data.onDeleteEmployee.id)
+    );
   }
 
   async getData(){
@@ -25,6 +32,5 @@ export class EmpComponent implements OnInit {
     await this.api.DeleteEmployee({
       id
     });
-    await this.getData();
   }
 }
