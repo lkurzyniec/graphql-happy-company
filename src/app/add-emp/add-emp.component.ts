@@ -33,10 +33,12 @@ export class AddEmpComponent implements OnInit {
   }
 
   async addEmployee() {
+    const ageValue = this.form.get('age').value;
+    const age = ageValue == '' ? null : parseInt(ageValue);
     const result = await this.api.CreateEmployee({
       fullName: this.form.get('fullName').value,
       employeeDepartmentId: this.form.get('departmentId').value,
-      age: this.form.get('age').value,
+      age: age,
     });
 
     this.newEmpId = result.id;

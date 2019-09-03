@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { APIService } from "../API.service";
 import { orderBy } from "lodash";
 
@@ -7,20 +7,28 @@ import { orderBy } from "lodash";
   templateUrl: './dept.component.html',
   styleUrls: ['./dept.component.scss']
 })
-export class DeptComponent implements OnInit {
+export class DeptComponent implements OnInit, OnDestroy {
   departments: any = [];
+  onCreateDepartmentSubscription: any = null;
+  onDeleteDepartmentSubscription: any = null;
 
   constructor(private api: APIService) { }
 
   async ngOnInit() {
     this.getData();
 
-    this.api.OnCreateDepartmentListener.subscribe(
+    this.onCreateDepartmentSubscription = this.api.OnCreateDepartmentListener.subscribe(
       added => this.departments.push(added.value.data.onCreateDepartment)
     );
-    this.api.OnDeleteDepartmentListener.subscribe(
+    this.onDeleteDepartmentSubscription = this.api.OnDeleteDepartmentListener.subscribe(
       deleted => this.departments = this.departments.filter(item => item.id !== deleted.value.data.onDeleteDepartment.id)
     );
+  }
+
+  @HostListener('window:beforeunload')
+  ngOnDestroy(): void {
+    this.onCreateDepartmentSubscription.unsubscribe();
+    this.onDeleteDepartmentSubscription.unsubscribe();
   }
 
   async getData(){
