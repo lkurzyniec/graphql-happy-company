@@ -6,6 +6,7 @@
 <div>
   <div *ngFor="let employee of employees">
     <p>Name: {{employee.fullName}} <button title="Remove" (click) = "remove(employee.id)">&times;</button></p>
+    <p>Age: {{employee.age}}</p>
     <p *ngIf="employee.department.name">Department: {{employee.department.name}}</p>
     <hr />
   </div>

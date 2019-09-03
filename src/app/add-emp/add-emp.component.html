@@ -2,6 +2,8 @@
 <form [formGroup]="form">
   Full name: <input type="text" formControlName="fullName" #fullName /><span *ngIf="form.controls['fullName'].invalid">*</span>
   <br />
+  Age: <input type="number" pattern="[1-9][0-9]" min="18" max="99" step="1" formControlName="age" #age />
+  <br />
   Department:
   <select (change)="departmentChanged($event)" formControlName="departmentId">
     <option value="" disabled>Choose department</option>

@@ -17,6 +17,7 @@ export class AddEmpComponent implements OnInit {
     this.form = this.fb.group({
       fullName: ['', Validators.required],
       departmentId: ['', Validators.required],
+      age: ['', [Validators.min(18), Validators.max(99)]],
     });
   }
 
@@ -35,6 +36,7 @@ export class AddEmpComponent implements OnInit {
     const result = await this.api.CreateEmployee({
       fullName: this.form.get('fullName').value,
       employeeDepartmentId: this.form.get('departmentId').value,
+      age: this.form.get('age').value,
     });
 
     this.newEmpId = result.id;
